@@ -3,29 +3,19 @@ import React, { useState } from 'react';
 import { PortfolioCard } from './components/PortfolioCard';
 import { CLIENTS } from './constants';
 import { Client, Platform } from './types';
+import LogoImage from "./src/assets/eyoha_logo.png";
+
 
 const App: React.FC = () => {
   const [selectedClient, setSelectedClient] = useState<Client | null>(null);
 
   const Logo = ({ className = "h-8" }: { className?: string }) => (
     <div className={`flex items-center ${className}`}>
-      <svg viewBox="0 0 100 100" className="h-full w-auto mr-3" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="logoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#7e22ce" />
-            <stop offset="100%" stopColor="#f97316" />
-          </linearGradient>
-        </defs>
-        <path d="M70 20C50 15 20 30 15 55C10 80 40 90 60 85C80 80 90 60 85 45" stroke="url(#logoGrad)" strokeWidth="10" strokeLinecap="round" />
-        <path d="M60 85L85 65" stroke="url(#logoGrad)" strokeWidth="6" strokeLinecap="round" />
-        <circle cx="85" cy="65" r="4" fill="#f97316" />
-        <circle cx="90" cy="60" r="3" fill="#f97316" />
-        <circle cx="80" cy="55" r="3" fill="#f97316" />
-      </svg>
-      <div className="flex flex-col">
-        <span className="brand-font text-2xl leading-none text-slate-900">EYOHA</span>
-        <span className="brand-font text-[11px] leading-none text-purple-700 tracking-[0.25em] -mt-0.5">DIGITALS</span>
-      </div>
+      <img
+      src={LogoImage}
+      alt="Eyoha Digitals Logo"
+      className="w-20 h-20 object-contain"
+    />
     </div>
   );
 
@@ -145,7 +135,7 @@ const App: React.FC = () => {
               <span className="inline-block px-4 py-1.5 bg-purple-100 text-purple-700 rounded-full text-[10px] font-black uppercase tracking-[0.4em] mb-6">Featured Clients</span>
               <h1 className="text-6xl md:text-7xl font-black text-slate-900 mb-8 tracking-tighter">Previous Work</h1>
               <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light leading-relaxed">
-                Click "View Managed Work" on any client below to see the specific <span className="text-purple-600 font-semibold">Facebook, Instagram, TikTok, X, LinkedIn, Website, and Threads</span> profiles we manage.
+                Click "View Managed Work" on any client below to see the specific <span className="text-purple-600 font-semibold">Facebook, Instagram, TikTok, LinkedIn, Website, and Other</span> profiles we manage.
               </p>
               
               {/* Decorative Circle */}
@@ -172,25 +162,19 @@ const App: React.FC = () => {
             <Logo className="h-12 mb-10" />
             <div className="flex flex-wrap justify-center gap-x-10 gap-y-4 mb-12">
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> Facebook
+                <span className="w-1.5 h-1.5 bg-orange-500 rounded-full"></span> <a href="">Facebook</a>
               </span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full"></span> Instagram
+                <span className="w-1.5 h-1.5 bg-purple-500 rounded-full"></span> <a href="">Instagram</a>
               </span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-black rounded-full"></span> TikTok
+                <span className="w-1.5 h-1.5 bg-black rounded-full"></span> <a href="">TikTok</a>
               </span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-blue-400 rounded-full"></span> X
+                <span className="w-1.5 h-1.5 bg-blue-700 rounded-full"></span> <a href="https://www.linkedin.com/company/eyoha-digitals/">LinkedIn</a>
               </span>
               <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-blue-700 rounded-full"></span> LinkedIn
-              </span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> Website
-              </span>
-              <span className="text-xs font-bold text-slate-400 uppercase tracking-widest flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-purple-800 rounded-full"></span> Threads
+                <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full"></span> <a href="https://eyohadigitalstech.vercel.app/">Website</a> 
               </span>
             </div>
             <div className="pt-12 border-t border-slate-50 w-full text-center">
